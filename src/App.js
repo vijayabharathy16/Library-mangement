@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { Dashboard } from './Dashboard';
+import { Navbar } from './Navbar';
+import { Sidebar } from './Sidebar';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+import { Books } from './Books';
+import { Addbook } from './Addbook';
+import ViewBook from './ViewBook';
+import { Editbook } from './Editbook';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <div className='row'>
+          <Sidebar />
+          <div className='col-lg-10 half ' >
+            <Navbar />
+            <Routes>
+              <Route path="/dashboard" element={<Dashboard />}></Route>
+              <Route path="/books" element={<Books />}></Route>
+              {/* <Route path="/addbook" element={<Addbook />}></Route> */}
+              <Route path="/addbook" element={<Addbook/>}></Route>
+              <Route path="/viewbook/:id" element={<ViewBook />}></Route>
+              <Route path="/editbook/:id" element={<Editbook />}></Route>
+            </Routes>
+
+          </div>
+        </div>
+      </div>
+    </BrowserRouter>
   );
+
+
 }
 
 export default App;
