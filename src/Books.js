@@ -59,7 +59,7 @@ export function Books() {
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tfoot>
+                            {/* <tfoot>
                                 <tr>
                                     <th>Title</th>
                                     <th>Author</th>
@@ -67,7 +67,7 @@ export function Books() {
                                     <th>Count</th>
                                     <th>Action</th>
                                 </tr>
-                            </tfoot>
+                            </tfoot> */}
                             <tbody>
                                 {
                                     booksData.map((item) => {

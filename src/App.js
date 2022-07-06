@@ -19,6 +19,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+       
         <div className='row'>
           <Sidebar />
           <div className='col-lg-10 half ' >
